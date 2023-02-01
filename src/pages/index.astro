@@ -1,0 +1,151 @@
+---
+import IconArrow from '../assets/svg/shared/IconArrow.astro'
+import Body from '../layout/Body.astro'
+---
+
+<Body headTitle='Home'>
+  <header
+    class='w-full bg-black text-white flex flex-col items-center gap-16 pb-16'
+  >
+    <img
+      class='w-full'
+      src='/assets/home/mobile/create-and-share.jpg'
+      alt='An image of a person standing by a lake looking at the horizon'
+    />
+    <section class='w-full grid place-content-center'>
+      <div class='grid justify-center gap-4 max-w-[320px]'>
+        <h1 class='font-semibold text-3xl uppercase'>
+          Create and share your photo Stories
+        </h1>
+        <p class='opacity-60 text-base'>
+          Photosnap is a platform for photographers and visual storytellers. We
+          make it easy to share photos, tell stories and connect with others.
+        </p>
+        <div class='flex gap-4 items-center'>
+          <a href='#' class='uppercase font-semibold text-lg'>Get an invite</a>
+          <IconArrow color='white' styles='h-5 w-12' />
+        </div>
+      </div>
+    </section>
+  </header>
+  <main class='w-full grid place-content-center gap-16'>
+    <section class='flex flex-col justify-center items-center gap-16'>
+      <article class='w-full grid place-items-center gap-16'>
+        <img
+          class='w-full'
+          src='/assets/home/mobile/beautiful-stories.jpg'
+          alt=''
+        />
+        <div class='flex flex-col justify-center gap-4 max-w-[320px]'>
+          <h2 class='text-3xl font-bold uppercase'>
+            Beautiful stories every time
+          </h2>
+          <p class='text-base opacity-60'>
+            We provide design templates to ensure your stories look terrific.
+            Easily add photos, text, embed maps and media from other networks.
+            Then share your story with everyone.
+          </p>
+          <div class='flex gap-4 items-center'>
+            <a href='#' class='uppercase font-semibold text-lg'
+              >View the stories</a
+            >
+            <IconArrow styles='h-5 w-12' />
+          </div>
+        </div>
+      </article>
+      <article class='w-full grid place-items-center gap-16'>
+        <img
+          class='w-full'
+          src='/assets/home/mobile/designed-for-everyone.jpg'
+          alt=''
+        />
+        <div class='flex flex-col justify-center gap-4 max-w-[320px]'>
+          <h2 class='text-3xl font-bold uppercase'>Designed for everyone</h2>
+          <p class='text-base opacity-60'>
+            Photosnap can help you create stories that resonate with your
+            audience. Our tool is designed for photographers of all levels,
+            brands, businesses you name it.
+          </p>
+          <div class='flex gap-4 items-center'>
+            <a href='#' class='uppercase font-semibold text-lg'
+              >View the stories</a
+            >
+            <IconArrow styles='h-5 w-12' />
+          </div>
+        </div>
+      </article>
+    </section>
+    <section>
+      <article>
+        <div>
+          <h3>The Mountains</h3>
+          <p>by John Appleseed</p>
+          <hr />
+          <a href=''>Read Story</a>
+        </div>
+      </article>
+      <article>
+        <div>
+          <h3>Sunset Cityscapes</h3>
+          <p>by Benjamin Cruz</p>
+          <hr />
+          <a href=''>Read Story</a>
+        </div>
+      </article><article>
+        <div>
+          <h3>18 Days Voyage</h3>
+          <p>by Alexei Borodin</p>
+          <hr />
+          <a href=''>Read Story</a>
+        </div>
+      </article><article>
+        <div>
+          <h3>Architecturals</h3>
+          <p>by Samantha Brooke</p>
+          <hr />
+          <a href=''>Read Story</a>
+        </div>
+      </article>
+    </section>
+    <section>
+      <article>
+        <img src='' alt='' />
+        <h3>100% Responsive</h3>
+        <p>
+          No matter which the device you’re on, our site is fully responsive and
+          stories look beautiful on any screen.
+        </p>
+      </article>
+      <article>
+        <img src='' alt='' />
+        <h3>No Photo Upload Limit</h3>
+        <p>
+          Our tool has no limits on uploads or bandwidth. Freely upload in bulk
+          and share all of your stories in one go.
+        </p>
+      </article>
+
+      <article>
+        <img src='' alt='' />
+        <h3>Available to Embed</h3>
+        <p>
+          Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube
+          videos, Google Maps, and more.
+        </p>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <header>
+      <div>PHOTOSNAP</div>
+      <div>ICONS</div>
+    </header>
+    <div>
+      <a href='#'>Stories</a>
+      <a href='#'>Features</a>
+      <a href='#'>Pricing</a>
+    </div>
+    <a href=''>Get an invite</a>
+    <p>Copyright 2019. All Rights Reserved</p>
+  </footer>
+</Body>
