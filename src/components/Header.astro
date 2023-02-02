@@ -1,0 +1,30 @@
+---
+import IconArrow from '../assets/svg/shared/IconArrow.astro'
+---
+
+<header
+  class='w-full bg-black text-white flex flex-col items-center gap-16 pb-16'
+>
+  <img
+    class='w-full'
+    src='/assets/home/mobile/create-and-share.jpg'
+    alt='An image of a person standing by a lake looking at the horizon'
+  />
+  <section class='w-full grid place-content-center'>
+    <div class='grid justify-center gap-4 max-w-[320px]'>
+      <h1 class='font-semibold text-3xl uppercase tracking-widest'>
+        Create and share your photo Stories
+      </h1>
+      <p class='opacity-60 text-base'>
+        Photosnap is a platform for photographers and visual storytellers. We
+        make it easy to share photos, tell stories and connect with others.
+      </p>
+      <div class='flex gap-4 items-center'>
+        <a href='#' class='uppercase font-semibold text-lg tracking-widest'
+          >Get an invite</a
+        >
+        <IconArrow color='white' styles='h-5 w-12' />
+      </div>
+    </div>
+  </section>
+</header>
