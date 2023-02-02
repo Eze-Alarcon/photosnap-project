@@ -1,16 +1,49 @@
 ---
+import IconMenu from '../../assets/svg/shared/IconMenu.astro'
+import IconLogo from '../../assets/svg/shared/IconLogo.astro'
+import IconClose from '../../assets/svg/shared/IconClose.astro'
 ---
 
-<nav>
-  <header>
-    <div>PHOTOSNAP</div>
-    <div>X</div>
+<script>
+  const iconMenu = document.getElementById('burgerMenu')
+  const closeMenu = document.getElementById('closeMenu')
+  const linkContainer = document.getElementById('linkContainer')
+
+  iconMenu.addEventListener('click', hanldeClick)
+  closeMenu.addEventListener('click', hanldeClick)
+
+  function hanldeClick() {
+    iconMenu.classList.toggle('hidden')
+    closeMenu.classList.toggle('hidden')
+    linkContainer.classList.toggle('hidden')
+  }
+</script>
+
+<nav
+  class='min-h-[80px] sticky top-0 w-full flex flex-col md:flex-row justify-center items-center bg-white'
+>
+  <header
+    class='h-20 w-full max-w-[320px] flex justify-between items-center md:max-w-none md:w-min'
+  >
+    <IconLogo style='w-44' />
+    <IconMenu style='md:hidden' />
+    <IconClose style='md:hidden hidden' />
   </header>
-  <div>
-    <a href='#'>Stories</a>
-    <a href='#'>Features</a>
-    <a href='#'>Pricing</a>
+  <div
+    id='linkContainer'
+    class='hidden w-full max-w-[320px] mb-8 uppercase text-base font-semibold tracking-widest md:flex md:justify-between md:items-center md:max-w-none'
+  >
+    <ul class='w-full md:flex gap-4 text-center'>
+      <li><a href='#'>Stories</a></li>
+      <li><a href='#'>Features</a></li>
+      <li><a href='#'>Pricing</a></li>
+    </ul>
+    <hr class='my-5 md:hidden' />
+    <button
+      type='button'
+      class='bg-black text-white w-full h-12 uppercase font-black text-base tracking-widest'
+    >
+      Get an invite</button
+    >
   </div>
-  <hr />
-  <button type='button'> Get an invite</button>
 </nav>

@@ -5,6 +5,7 @@ import Body from '../layout/Body.astro'
 import CardStory from '../components/home/CardStory.astro'
 import ImageCard from '../components/shared/ImageCard.astro'
 import Footer from '../components/shared/Footer.astro'
+import Navbar from '../components/shared/Navbar.astro'
 
 const homeStories = {
   img1: 'beautiful-stories.jpg',
@@ -42,6 +43,7 @@ const homeCardImages = [
 ---
 
 <Body headTitle='Home'>
+  <Navbar />
   <Header />
   <main class='w-full grid place-content-center gap-16'>
     <section class='flex flex-col justify-center items-center gap-16'>
