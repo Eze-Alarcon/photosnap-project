@@ -1,0 +1,23 @@
+---
+import IconArrow from '../../assets/svg/shared/IconArrow.astro'
+
+const { title, author, img } = Astro.props
+---
+
+<article class='w-full h-[400px] relative'>
+  <img
+    class='h-full w-full absolute'
+    src={`/assets/stories/mobile/${img}`}
+    alt=''
+  />
+  <div class='absolute bottom-0 top-0 w-full z-10 bg-opacity-20 bg-black'></div>
+  <div class='text-white absolute bottom-0 w-full px-8 pb-10 z-20'>
+    <h3 class='text-xl font-semibold'>{title}</h3>
+    <p>by {author}</p>
+    <hr class='my-4' />
+    <div class='flex justify-between items-center'>
+      <a href='#' class='uppercase font-semibold tracking-widest'>Read Story</a>
+      <IconArrow color='white' />
+    </div>
+  </div>
+</article>
