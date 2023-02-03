@@ -1,17 +1,33 @@
 ---
 import IconArrow from '../../assets/svg/shared/IconArrow.astro'
+import '../../css/style.css'
 ---
 
 <header
-  class='w-full bg-black text-white flex flex-col items-center gap-16 pb-16'
+  class='w-full h-full bg-black text-white flex flex-col items-center pb-16 md:flex-row-reverse md:h-[650px] md:pb-0'
 >
   <img
-    class='w-full'
+    loading='lazy'
+    class='w-full md:hidden'
     src='/assets/home/mobile/create-and-share.jpg'
     alt='An image of a person standing by a lake looking at the horizon'
   />
-  <section class='w-full grid place-content-center'>
-    <div class='grid justify-center gap-4 max-w-[320px]'>
+  <div class='hidden md:block h-full w-full'>
+    <img
+      loading='lazy'
+      class='object-cover h-full w-full'
+      src='/assets/home/tablet/create-and-share.jpg'
+      srcset='
+        /assets/home/tablet/create-and-share.jpg 768w,
+        /assets/home/desktop/create-and-share.jpg 1024w
+        '
+      alt='An image of a person standing by a lake looking at the horizon'
+    />
+  </div>
+  <section class='w-full grid place-content-center md:pt-0 gradient-tablet'>
+    <div
+      class='grid w-full justify-center gap-4 max-w-[320px] gradient-mobile pt-16 md:pt-0'
+    >
       <h1 class='font-semibold text-3xl uppercase tracking-widest'>
         Create and share your photo Stories
       </h1>

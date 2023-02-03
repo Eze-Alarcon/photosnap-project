@@ -1,0 +1,22 @@
+.gradient-mobile {
+  border-top-width: 0;
+}
+
+.gradient-tablet {
+  border-left-width: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .gradient-tablet {
+    border-left-width: 3px;
+    border-image: linear-gradient(to top, #ffc593, #bc7198, #5a77ff) 1 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .gradient-mobile {
+    border-style: solid;
+    border-top-width: 3px;
+    border-image: linear-gradient(to right, #ffc593, #bc7198, #5a77ff) 1 0%;
+  }
+}
