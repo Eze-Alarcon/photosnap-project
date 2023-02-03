@@ -4,23 +4,40 @@ import IconLogo from '../../assets/svg/shared/IconLogo.astro'
 import SocialMedia from './SocialMedia.astro'
 ---
 
-<footer class='mt-16 bg-black text-white grid place-content-center py-14'>
-  <div class='flex flex-col justify-center items-center gap-10 max-w-[320px]'>
-    <IconLogo white style='h-4' />
-    <article class='grid gap-8 place-content-center'>
-      <SocialMedia />
-    </article>
-    <ul
-      class='grid justify-items-center gap-5 mb-10 uppercase tracking-widest font-semibold text-sm'
+<footer
+  class='mt-14 w-full min-h-[540px] bg-black text-white flex justify-center items-center py-14 md:min-h-[285px] md:px-10 md:py-0'
+>
+  <section
+    class='flex flex-col justify-between gap-28 max-w-[320px] md:flex-row md:max-w-none md:w-full md:gap-0 md:h-[180px]'
+  >
+    <article
+      class='w-full flex flex-col justify-between items-center gap-10 md:w-1/2 md:items-start md:gap-0'
     >
-      <li><a href='#'>Stories</a></li>
-      <li><a href='#'>Features</a></li>
-      <li><a href='#'>Pricing</a></li>
-    </ul>
-    <div class='flex gap-4 items-center'>
-      <a href='#' class='uppercase font-semibold text-sm'>GET AN INVITE</a>
-      <IconArrow color='white' styles='h-5 w-12' />
-    </div>
-    <p class='opacity-60'>Copyright 2019. All Rights Reserved</p>
-  </div>
+      <IconLogo white style='h-4' />
+
+      <article class='grid gap-8 place-content-center md:md:order-3'>
+        <SocialMedia />
+      </article>
+
+      <ul
+        class='grid justify-items-center gap-5 uppercase tracking-widest font-semibold text-sm md:flex md:gap-6 md:order-2 md:mb-14'
+      >
+        <li><a href='#'>Home</a></li>
+        <li><a href='#'>Stories</a></li>
+        <li><a href='#'>Features</a></li>
+        <li><a href='#'>Pricing</a></li>
+      </ul>
+    </article>
+
+    <article
+      class='w-full flex flex-col gap-9 md:w-1/2 md:items-end md:justify-between'
+    >
+      <div class='flex gap-4 justify-center items-center'>
+        <a href='#' class='uppercase font-semibold text-sm'>GET AN INVITE</a>
+        <IconArrow color='white' styles='h-5 w-12' />
+      </div>
+
+      <p class='opacity-60'>Copyright 2019. All Rights Reserved</p>
+    </article>
+  </section>
 </footer>
