@@ -4,11 +4,16 @@ import IconArrow from '../../assets/svg/shared/IconArrow.astro'
 const { title, author, img } = Astro.props
 ---
 
-<article class='w-full h-[400px] relative'>
+<article class='w-full h-[400px] relative md:h-[500px]'>
   <img
+    loading='lazy'
     class='h-full w-full absolute'
     src={`/assets/stories/mobile/${img}`}
-    alt=''
+    srcset={`
+      /assets/stories/mobile/${img} 768w,
+      /assets/stories/desktop/${img} 1080w,
+    `}
+    alt={title}
   />
   <div class='absolute bottom-0 top-0 w-full z-10 bg-opacity-20 bg-black'></div>
   <div class='text-white absolute bottom-0 w-full px-8 pb-10 z-20'>

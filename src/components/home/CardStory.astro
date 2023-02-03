@@ -1,23 +1,46 @@
 ---
 import IconArrow from '../../assets/svg/shared/IconArrow.astro'
 
-const { title, story, img } = Astro.props
+const { title, story, img, reverse } = Astro.props
 ---
 
-<article class='w-full grid place-items-center gap-16'>
-  <img class='w-full' src={`/assets/home/mobile/${img}`} alt='' />
-  <div class='flex flex-col justify-center gap-4 max-w-[320px]'>
-    <h2 class='text-3xl font-bold uppercase tracking-widest'>
-      {title}
-    </h2>
-    <p class='text-base opacity-60'>
-      {story}
-    </p>
-    <div class='flex gap-4 items-center'>
-      <a href='#' class='uppercase font-semibold text-lg tracking-wider'
-        >View the stories</a
-      >
-      <IconArrow styles='h-5 w-12' />
+<article
+  class={`w-full grid place-items-center md:flex ${
+    reverse && 'md:flex-row-reverse'
+  } md:min-h-[600px] md:justify-between`}
+>
+  <img
+    loading='lazy'
+    class='w-full md:hidden'
+    src={`/assets/home/mobile/${img}`}
+    role='presentation'
+  />
+  <div class='hidden md:block w-2/5'>
+    <img
+      loading='lazy'
+      class='object-cover object-center h-full w-full'
+      src={`/assets/home/tablet/${img}`}
+      srcset={`
+        /assets/home/tablet/${img} 768w`}
+      role='presentation'
+    />
+  </div>
+  <div class='flex flex-col justify-center items-center w-full md:w-3/5'>
+    <div
+      class='flex flex-col justify-center gap-4 max-w-[320px] md:max-w-none md:px-16'
+    >
+      <h2 class='text-3xl font-bold uppercase tracking-widest pt-16 md:pt-0'>
+        {title}
+      </h2>
+      <p class='text-base opacity-60'>
+        {story}
+      </p>
+      <div class='flex gap-4 items-center'>
+        <a href='#' class='uppercase font-semibold text-lg tracking-wider'
+          >View the stories</a
+        >
+        <IconArrow styles='h-5 w-12' />
+      </div>
     </div>
   </div>
 </article>
