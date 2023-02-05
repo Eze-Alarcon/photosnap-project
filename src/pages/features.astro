@@ -1,0 +1,42 @@
+---
+import IconArrow from '../assets/svg/shared/IconArrow.astro'
+import ExtraFeatures from '../components/features/ExtraFeatures.astro'
+import Features from '../components/home/Features.astro'
+import Footer from '../components/shared/Footer.astro'
+import HeaderAlternative from '../components/shared/HeaderAlternative.astro'
+import Navbar from '../components/shared/Navbar.astro'
+import Body from '../layout/Body.astro'
+---
+
+<Body>
+  <Navbar />
+  <HeaderAlternative />
+  <main class='grid gap-20'>
+    <section class='grid gap-14'>
+      <Features>
+        <ExtraFeatures />
+      </Features>
+    </section>
+    <section class='w-full min-h-[290px] text-white'>
+      <article class='min-h-[290px] w-full relative'>
+        <img
+          src='/assets/shared/mobile/bg-beta.jpg'
+          role='presentation'
+          class='w-full object-cover bottom-0 absolute'
+        />
+        <div class='h-full absolute flex flex-col justify-evenly px-8'>
+          <h3 class='uppercase font-bold text-4xl'>
+            We're in Beta. Get your invite today!
+          </h3>
+          <div class='flex justify-start gap-5 items-center'>
+            <a href='#' class='uppercase font-semibold tracking-widest'
+              >Get an invite</a
+            >
+            <IconArrow color='white' />
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <Footer />
+</Body>
