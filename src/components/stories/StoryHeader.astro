@@ -2,18 +2,25 @@
 import IconArrow from '../../assets/svg/shared/IconArrow.astro'
 ---
 
-<header class='bg-black text-white w-full'>
+<header class='bg-black text-white w-full md:min-h-[650px] md:relative'>
   <section>
     <img
       loading='lazy'
       src='/assets/stories/mobile/moon-of-appalacia.jpg'
+      srcset='
+        /assets/stories/mobile/moon-of-appalacia.jpg 400w,
+        /assets/stories/tablet/moon-of-appalacia.jpg 500w,
+        /assets/stories/desktop/moon-of-appalacia.jpg 1024w
+        '
       alt=''
-      class='w-full h-[375px]'
+      class='w-full h-[375px] object-cover object-top md:object-right-top md:h-full md:absolute'
     />
   </section>
-  <section class='w-full min-h-[500px]'>
+  <section
+    class='w-full min-h-[500px] md:absolute md:h-[650px] md:flex md:flex-col md:justify-center'
+  >
     <article
-      class='w-full min-h-[500px] px-7 py-12 flex flex-col justify-between'
+      class='w-full min-h-[500px] px-7 py-12 flex flex-col justify-between md:min-h-0 md:h-2/3 md:w-3/5 md:max-w-[500px] md:pr-0'
     >
       <p class='uppercase font-semibold text-xs tracking-widest'>
         Last month's featured story
