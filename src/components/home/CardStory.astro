@@ -7,7 +7,7 @@ const { title, story, img, reverse } = Astro.props
 <article
   class={`w-full grid place-items-center md:flex ${
     reverse && 'md:flex-row-reverse'
-  } md:min-h-[600px] md:justify-between`}
+  } md:min-h-[600px] md:justify-between lg:min-h-0 lg:max-h-[600px]`}
 >
   <img
     loading='lazy'
@@ -15,17 +15,23 @@ const { title, story, img, reverse } = Astro.props
     src={`/assets/home/mobile/${img}`}
     role='presentation'
   />
-  <div class='hidden md:block w-2/5'>
+  <div class='hidden md:block w-2/5 lg:w-3/5'>
     <img
       loading='lazy'
-      class='object-cover object-center h-full w-full'
+      class='lg:hidden object-cover object-center h-full w-full'
       src={`/assets/home/tablet/${img}`}
-      srcset={`
-        /assets/home/tablet/${img} 768w`}
+      role='presentation'
+    />
+    <img
+      loading='lazy'
+      class='hidden lg:block object-cover object-center h-full w-full'
+      src={`/assets/home/desktop/${img}`}
       role='presentation'
     />
   </div>
-  <div class='flex flex-col justify-center items-center w-full md:w-3/5'>
+  <div
+    class='flex flex-col justify-center items-center w-full md:w-3/5 lg:w-2/5'
+  >
     <div
       class='flex flex-col justify-center gap-4 max-w-[320px] md:max-w-none md:px-16'
     >

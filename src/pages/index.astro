@@ -45,9 +45,7 @@ const homeCardImages = [
 <Body headTitle='Home'>
   <Navbar />
   <Header />
-  <main
-    class='w-full grid place-content-center gap-16 md:gap-0 md:place-content-between'
-  >
+  <main class='w-full grid mb-16 gap-16 md:gap-0 lg:mb-0'>
     <section class='flex flex-col justify-center items-center gap-16 md:gap-0'>
       <CardStory
         img={homeStories.img1}
@@ -62,14 +60,14 @@ const homeCardImages = [
       />
     </section>
 
-    <section class='grid md:grid-cols-2'>
+    <section class='grid md:grid-cols-2 lg:flex'>
       {
         homeCardImages.map((item) => (
           <ImageCard img={item.img} title={item.title} author={item.author} />
         ))
       }
     </section>
-    <section class='grid gap-14 px-10 md:mt-16'>
+    <section class='grid gap-14 px-10 lg:flex md:mt-16 lg:my-28'>
       <Features />
     </section>
   </main>
