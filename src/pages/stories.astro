@@ -1,0 +1,132 @@
+---
+import ImageCard from '../components/shared/ImageCard.astro'
+import Navbar from '../components/shared/Navbar.astro'
+import StoryHeader from '../components/stories/StoryHeader.astro'
+import Body from '../layout/Body.astro'
+import '../css/style.css'
+
+const homeCardImages = [
+  {
+    date: 'April 16th 2020',
+    img: 'mountains.jpg',
+    title: 'The Mountains',
+    author: 'John Appleseed',
+  },
+  {
+    date: 'April 14th 2020',
+    img: 'cityscapes.jpg',
+    title: 'Sunset Cityscapes',
+    author: 'Benjamin Cruz',
+  },
+  {
+    date: 'April 11th 2020',
+    img: '18-days-voyage.jpg',
+    title: '18 Days Voyage',
+    author: 'Alexei Borodin',
+  },
+
+  {
+    date: 'April 9th 2020',
+    img: 'architecturals.jpg',
+    title: 'Architecturals',
+    author: 'Samantha Brooke',
+  },
+  {
+    date: 'April 7th 2020',
+    img: 'world-tour.jpg',
+    title: 'World Tour 2019',
+    author: 'Timothy Wagner',
+  },
+  {
+    date: 'April 3th 2020',
+    img: 'unforeseen-corners.jpg',
+    title: 'Unforeseen Corners',
+    author: 'William Malcolm',
+  },
+
+  {
+    date: 'March 29th 2020',
+    img: 'king-on-africa.jpg',
+    title: 'King on Africa: Part II',
+    author: 'Tim Hillenburg',
+  },
+  {
+    date: 'March 21th 2020',
+    img: 'trip-to-nowhere.jpg',
+    title: 'The Trip to Nowhere',
+    author: 'Felicia Rourke',
+  },
+  {
+    date: 'March 19th 2020',
+    img: 'rage-of-the-sea.jpg',
+    title: 'Rage of The Sea',
+    author: 'Mohammed Abdul',
+  },
+
+  {
+    date: 'March 16th 2020',
+    img: 'running-free.jpg',
+    title: 'Running Free',
+    author: 'Michelle',
+  },
+  {
+    date: 'March 11th 2020',
+    img: 'behind-the-waves.jpg',
+    title: 'Behind the Waves',
+    author: 'Lamarr Wilson',
+  },
+  {
+    date: 'March 9th 2020',
+    img: 'calm-waters.jpg',
+    title: 'Calm Waters',
+    author: 'Samantha Brooke',
+  },
+
+  {
+    date: 'March 5th 2020',
+    img: 'milky-way.jpg',
+    title: 'The Milky Way',
+    author: 'Benjamin Cruz',
+  },
+  {
+    date: 'March 4th 2020',
+    img: 'dark-forest.jpg',
+    title: 'Night at The Dark Forest',
+    author: 'Mohammed Abdul',
+  },
+  {
+    date: 'March 1st 2020',
+    img: 'somwarpet.jpg',
+    title: 'Somwarpet’s Beauty',
+    author: 'Michelle',
+  },
+
+  {
+    date: 'February 25th 2020',
+    img: 'land-of-dreams.jpg',
+    title: 'Land of Dreams',
+    author: 'William Malcolm',
+  },
+]
+---
+
+<Body>
+  <Navbar />
+  <StoryHeader />
+  <main>
+    <section class='grid md:grid-cols-2 cardGrid'>
+      {
+        homeCardImages.map((item) => (
+          <div class='w-full h-[400px] relative md:h-[500px]'>
+            <ImageCard
+              date={item.date}
+              img={item.img}
+              title={item.title}
+              author={item.author}
+            />
+          </div>
+        ))
+      }
+    </section>
+  </main>
+</Body>

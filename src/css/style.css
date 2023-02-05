@@ -1,3 +1,11 @@
+/* 
+  ===================
+
+  ----- index -----
+
+  ===================
+*/
+
 .gradient-mobile {
   border-top-width: 0;
 }
@@ -18,5 +26,19 @@
     border-style: solid;
     border-top-width: 3px;
     border-image: linear-gradient(to right, #ffc593, #bc7198, #5a77ff) 1 0%;
+  }
+}
+
+/* 
+  ===================
+
+  ----- stories -----
+
+  ===================
+*/
+
+@media screen and (min-width: 1024px) {
+  .cardGrid {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   }
 }
