@@ -1,5 +1,7 @@
 ---
 import '../../css/style.css'
+
+const { title, description, imgRoute } = Astro.props
 ---
 
 <header
@@ -8,20 +10,20 @@ import '../../css/style.css'
   <img
     loading='lazy'
     class='w-full md:hidden'
-    src='/assets/features/mobile/hero.jpg'
+    src={`/assets/${imgRoute}/mobile/hero.jpg`}
     role='presentation'
   />
   <div class='hidden md:block h-full w-2/5 max-h-[490px] lg:w-3/5'>
     <img
       loading='lazy'
       class='object-cover h-full w-full md:object-scale-down md:object-right lg:hidden'
-      src='/assets/features/tablet/hero.jpg'
+      src={`/assets/${imgRoute}/tablet/hero.jpg`}
       role='presentation'
     />
     <img
       loading='lazy'
       class='hidden lg:block object-cover h-full w-full md:object-right lg:h-full'
-      src='/assets/features/desktop/hero.jpg'
+      src={`/assets/${imgRoute}/desktop/hero.jpg`}
       role='presentation'
     />
   </div>
@@ -32,12 +34,10 @@ import '../../css/style.css'
       class='grid w-full justify-center gap-4 max-w-[320px] gradient-mobile pt-16 md:pt-0 lg:max-w-[380px]'
     >
       <h1 class='font-semibold text-3xl uppercase tracking-widest lg:text-4xl'>
-        Features
+        {title}
       </h1>
       <p class='opacity-60 text-base'>
-        We make sure all of our features are designed to be loved by every
-        aspiring and even professional photograpers who wanted to share their
-        stories.
+        {description}
       </p>
     </div>
   </section>

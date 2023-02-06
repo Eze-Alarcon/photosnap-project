@@ -1,0 +1,106 @@
+---
+import Footer from '../components/shared/Footer.astro'
+import HeaderAlternative from '../components/shared/HeaderAlternative.astro'
+import Navbar from '../components/shared/Navbar.astro'
+import Poster from '../components/shared/Poster.astro'
+import Body from '../layout/Body.astro'
+import Perks from '../components/pricing/Perks.astro'
+
+const headerContent = {
+  title: 'Pricing',
+  description:
+    'Create a your stories, Photosnap is a platform for photographers and visual storytellers. It’s the simple way to create and share your photos.',
+  imgRoute: 'pricing',
+}
+
+// Unlimited story posting
+
+const perks = [
+  {
+    name: 'Unlimited Story Posting',
+    basic: true,
+    pro: true,
+    business: true,
+  },
+  {
+    name: 'Unlimited Photo Upload',
+    basic: true,
+    pro: true,
+    business: true,
+  },
+  {
+    name: 'Embedding Custom Content',
+    basic: false,
+    pro: true,
+    business: true,
+  },
+  {
+    name: 'Customize Metadata',
+    basic: false,
+    pro: true,
+    business: true,
+  },
+  {
+    name: 'Advanced Metrics',
+    basic: false,
+    pro: false,
+    business: true,
+  },
+  {
+    name: 'Photo Downloads',
+    basic: false,
+    pro: false,
+    business: true,
+  },
+  {
+    name: 'Search Engine Indexing',
+    basic: false,
+    pro: false,
+    business: true,
+  },
+  {
+    name: 'Custom Analytics',
+    basic: false,
+    pro: false,
+    business: true,
+  },
+]
+---
+
+<Body>
+  <nav class='lg:flex lg:justify-center'>
+    <Navbar />
+  </nav>
+  <HeaderAlternative
+    title={headerContent.title}
+    description={headerContent.description}
+    imgRoute={headerContent.imgRoute}
+  />
+  <main class='px-7 my-16'>
+    <section></section>
+    <section class='uppercase w-full'>
+      <!-- <div>
+        <h3>Compare</h3>
+      </div> -->
+      <div class='mb-4'>
+        <p class='text-sm font-bold tracking-widest'>The features</p>
+      </div>
+      {
+        perks.map((item) => (
+          <Perks
+            name={item.name}
+            basic={item.basic}
+            pro={item.pro}
+            business={item.business}
+          />
+        ))
+      }
+    </section>
+  </main>
+  <aside class='w-full'>
+    <section class='w-full h-[290px] text-white'>
+      <Poster />
+    </section>
+  </aside>
+  <Footer />
+</Body>

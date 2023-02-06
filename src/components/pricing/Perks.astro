@@ -1,0 +1,23 @@
+---
+import IconCheck from '../../assets/svg/pricing/IconCheck.astro'
+
+const { name, basic, pro, business } = Astro.props
+---
+
+<article class='space-y-3 border-b-2 border-gray pb-6 mb-6'>
+  <p class='text-sm font-bold tracking-widest'>{name}</p>
+  <div class='grid grid-cols-3'>
+    <div class='space-y-3'>
+      <p class='text-sm font-bold opacity-50 tracking-widest'>Basic</p>
+      {basic && <IconCheck />}
+    </div>
+    <div class='space-y-3'>
+      <p class='text-sm font-bold opacity-50 tracking-widest'>Pro</p>
+      {pro && <IconCheck />}
+    </div>
+    <div class='space-y-3'>
+      <p class='text-sm font-bold opacity-50 tracking-widest'>Business</p>
+      {business && <IconCheck />}
+    </div>
+  </div>
+</article>

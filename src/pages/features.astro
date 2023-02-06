@@ -6,14 +6,25 @@ import HeaderAlternative from '../components/shared/HeaderAlternative.astro'
 import Navbar from '../components/shared/Navbar.astro'
 import Poster from '../components/shared/Poster.astro'
 import Body from '../layout/Body.astro'
+
+const headerContent = {
+  title: 'Features',
+  description:
+    'We make sure all of our features are designed to be loved by every aspiring and even professional photograpers who wanted to share their stories.',
+  imgRoute: 'features',
+}
 ---
 
 <Body>
   <nav class='lg:flex lg:justify-center'>
     <Navbar />
   </nav>
-  <HeaderAlternative />
-  <main class='grid gap-20 mt-20'>
+  <HeaderAlternative
+    title={headerContent.title}
+    description={headerContent.description}
+    imgRoute={headerContent.imgRoute}
+  />
+  <main class='grid gap-20 my-20'>
     <section
       class='grid gap-14 md:grid-cols-2 px-10 lg:grid-cols-3 max-w-[1100px] lg:mx-auto lg:px-0'
     >
@@ -21,9 +32,11 @@ import Body from '../layout/Body.astro'
         <ExtraFeatures />
       </Features>
     </section>
+  </main>
+  <aside class='w-full'>
     <section class='w-full h-[290px] text-white'>
       <Poster />
     </section>
-  </main>
+  </aside>
   <Footer />
 </Body>
