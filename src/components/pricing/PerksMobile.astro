@@ -1,0 +1,19 @@
+---
+import PerksVertical from './PerksVertical.astro'
+
+const { perks } = Astro.props
+---
+
+<div class='mb-4'>
+  <p class='font-bold tracking-widest'>The features</p>
+</div>
+{
+  perks.map((item) => (
+    <PerksVertical
+      name={item.name}
+      basic={item.basic}
+      pro={item.pro}
+      business={item.business}
+    />
+  ))
+}
