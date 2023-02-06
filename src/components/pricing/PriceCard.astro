@@ -1,0 +1,64 @@
+---
+const { item, dark } = Astro.props
+
+let monthPrice = item.price.toFixed(2)
+
+let yearPrice = Math.floor(monthPrice * 0.8).toFixed(2)
+---
+
+<article
+  class={`w-full min-h-[410px] group ${dark && 'darkCard'}`}
+  id={item.id}
+>
+  <div
+    class='w-full min-h-[410px] px-6 grid place-items-center gap-10 place-content-center bg-gray bg-opacity-30 group-[.darkCard]:bg-black group-[.darkCard]:bg-opacity-100 group-[.darkCard]:text-white'
+  >
+    <div class='w-full space-y-4 text-center'>
+      <p class='font-bold text-2xl tracking-wider'>{item.title}</p>
+      <p class='opacity-60'>
+        {item.description}
+      </p>
+    </div>
+    <div>
+      <p class='block font-semibold text-4xl text-center group-[.year]:hidden'>
+        $ {monthPrice}
+      </p>
+      <p class='hidden font-semibold text-4xl text-center group-[.year]:block'>
+        $ {yearPrice}
+      </p>
+      <p class='opacity-60 text-center'>per month</p>
+    </div>
+    <div class='w-[240px]'>
+      <button
+        type='button'
+        id={`${item.id}btn`}
+        class='uppercase w-full h-10 font-bold bg-black text-white group-[.darkCard]:bg-white group-[.darkCard]:text-black'
+        >Pick plan</button
+      >
+    </div>
+  </div>
+</article>
+<!-- 
+<article
+  class='w-full min-h-[410px] grid place-items-center gap-10 place-content-center bg-black text-white'
+>
+  <div class='w-full space-y-4 text-center'>
+    <p class='font-bold text-xl tracking-wider'>Pro</p>
+    <p class='opacity-60'>
+      Includes basic usage of our platform. Recommended for new and aspiring
+      photographers.
+    </p>
+  </div>
+  <div>
+    <p class='font-semibold text-4xl text-center'>$ 19.00</p>
+    <p class='opacity-60 text-center'>per month</p>
+  </div>
+  <div class='w-[240px]'>
+    <button
+      type='button'
+      class='uppercase w-full h-10 bg-white text-black font-bold'
+      >Pick plan</button
+    >
+  </div>
+</article>
+ -->

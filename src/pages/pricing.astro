@@ -6,6 +6,7 @@ import Poster from '../components/shared/Poster.astro'
 import Body from '../layout/Body.astro'
 import PerksMobile from '../components/pricing/PerksMobile.astro'
 import PerksTablet from '../components/pricing/PerksTablet.astro'
+import PriceCard from '../components/pricing/PriceCard.astro'
 
 const headerContent = {
   title: 'Pricing',
@@ -64,7 +65,81 @@ const perks = [
     business: true,
   },
 ]
+
+const plans = [
+  {
+    id: 'planBasic',
+    title: 'Basic',
+    description:
+      'Includes basic usage of our platform. Recommended for new and aspiring photographers.',
+    price: 19,
+  },
+  {
+    id: 'planPro',
+    title: 'Pro',
+    description:
+      'More advanced features available. Recommended for photography veterans and professionals.',
+    price: 39,
+  },
+  {
+    id: 'planBusiness',
+    title: 'Business',
+    description:
+      'Additional features available such as more detailed metrics. Recommended for business owners.',
+    price: 99,
+  },
+]
 ---
+
+<script>
+  const label = document.getElementById('check')
+  const option1 = document.getElementById('option1')
+  const option2 = document.getElementById('option2')
+
+  const planBasic = document.getElementById('planBasic')
+  const planPro = document.getElementById('planPro')
+  const planBusiness = document.getElementById('planBusiness')
+
+  const planBasicbtn = document.getElementById('planBasicbtn')
+  const planProbtn = document.getElementById('planProbtn')
+  const planBusinessbtn = document.getElementById('planBusinessbtn')
+
+  label.addEventListener('click', labelClick)
+
+  function labelClick() {
+    option1.classList.toggle('opacity-50')
+    option2.classList.toggle('opacity-50')
+    // change prices
+    planBasic.classList.toggle('year')
+    planPro.classList.toggle('year')
+    planBusiness.classList.toggle('year')
+  }
+
+  planBasicbtn.addEventListener('click', basicPlan)
+  planProbtn.addEventListener('click', proPlan)
+  planBusinessbtn.addEventListener('click', businessPlan)
+
+  function defaultStyles() {
+    planBasic.classList.remove('darkCard')
+    planPro.classList.remove('darkCard')
+    planBusiness.classList.remove('darkCard')
+  }
+
+  function basicPlan() {
+    defaultStyles()
+    planBasic.classList.add('darkCard')
+  }
+
+  function proPlan() {
+    defaultStyles()
+    planPro.classList.add('darkCard')
+  }
+
+  function businessPlan() {
+    defaultStyles()
+    planBusiness.classList.add('darkCard')
+  }
+</script>
 
 <Body>
   <nav class='lg:flex lg:justify-center'>
@@ -75,8 +150,28 @@ const perks = [
     description={headerContent.description}
     imgRoute={headerContent.imgRoute}
   />
-  <main class='px-7 my-16 md:px-10'>
-    <section></section>
+  <main class='px-7 my-16 md:px-10 grid gap-16'>
+    <section class='w-full h-8 flex justify-center items-center gap-8'>
+      <p id='option1' class='font-bold'>Monthly</p>
+      <label
+        for='check'
+        class='bg-gray cursor-pointer relative w-20 h-10 rounded-full'
+      >
+        <input type='checkbox' id='check' class='sr-only peer rounded-full' />
+        <span
+          class='w-2/5 h-4/5 bg-black absolute rounded-full left-1 top-1 peer-checked:left-11 transition-all duration-500'
+        ></span>
+      </label>
+      <p id='option2' class='font-bold opacity-50'>Yearly</p>
+    </section>
+    <section class='w-full grid gap-6'>
+      {
+        plans.map((item) => {
+          if (item.id === 'planPro') return <PriceCard item={item} dark />
+          return <PriceCard item={item} />
+        })
+      }
+    </section>
     <section class='hidden uppercase w-full md:block'>
       <PerksTablet perks={perks} />
     </section>
