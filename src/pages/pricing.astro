@@ -120,24 +120,24 @@ const plans = [
   planBusinessbtn.addEventListener('click', businessPlan)
 
   function defaultStyles() {
-    planBasic.classList.remove('darkCard')
-    planPro.classList.remove('darkCard')
-    planBusiness.classList.remove('darkCard')
+    planBasic.classList.remove('darkCard', 'cardGradient')
+    planPro.classList.remove('darkCard', 'cardGradient')
+    planBusiness.classList.remove('darkCard', 'cardGradient')
   }
 
   function basicPlan() {
     defaultStyles()
-    planBasic.classList.add('darkCard')
+    planBasic.classList.add('darkCard', 'cardGradient')
   }
 
   function proPlan() {
     defaultStyles()
-    planPro.classList.add('darkCard')
+    planPro.classList.add('darkCard', 'cardGradient')
   }
 
   function businessPlan() {
     defaultStyles()
-    planBusiness.classList.add('darkCard')
+    planBusiness.classList.add('darkCard', 'cardGradient')
   }
 </script>
 
