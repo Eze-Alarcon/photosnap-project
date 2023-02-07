@@ -3,8 +3,8 @@ import ImageCard from '../components/shared/ImageCard.astro'
 import Navbar from '../components/shared/Navbar.astro'
 import StoryHeader from '../components/stories/StoryHeader.astro'
 import Body from '../layout/Body.astro'
-import '../css/style.css'
 import Footer from '../components/shared/Footer.astro'
+import '../css/style.css'
 
 const homeCardImages = [
   {
@@ -112,7 +112,9 @@ const homeCardImages = [
 ---
 
 <Body>
-  <Navbar />
+  <nav class='lg:flex lg:justify-center'>
+    <Navbar />
+  </nav>
   <StoryHeader />
   <main>
     <section class='grid md:grid-cols-2 cardGrid'>

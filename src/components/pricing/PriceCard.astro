@@ -10,14 +10,14 @@ let yearPrice = Math.floor(monthPrice * 0.8).toFixed(2)
 <article
   class={`w-full min-h-[410px] group ${
     dark && 'darkCard cardGradient'
-  } md:min-h-[270px]`}
+  } md:min-h-[270px] lg:min-h-[410px] lg:grid lg:place-content-center lg:max-w-[350px]`}
   id={item.id}
 >
   <div
-    class='w-full min-h-full px-6 grid place-items-center gap-10 place-content-center bg-gray bg-opacity-30 group-[.darkCard]:bg-black group-[.darkCard]:bg-opacity-100 group-[.darkCard]:text-white md:grid-cols-2 md:grid-rows-[120px, 40px] md:px-10'
+    class='w-full min-h-full px-6 grid place-items-center gap-10 place-content-center bg-gray bg-opacity-30 group-[.darkCard]:bg-black group-[.darkCard]:bg-opacity-100 group-[.darkCard]:text-white md:grid-cols-2 md:grid-rows-[120px, 40px] md:px-10 lg:grid-cols-1 lg:grid-rows-none lg:min-w-[300px] lg:max-w-[350px] lg:min-h-[410px] group-[.darkCard]:lg:min-h-[470px]'
   >
     <div
-      class='w-full space-y-4 text-center md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 md:text-left'
+      class='w-full space-y-4 text-center md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 md:text-left lg:text-center'
     >
       <p class='font-bold text-2xl tracking-wider'>{item.title}</p>
       <p class='opacity-60'>
@@ -25,7 +25,7 @@ let yearPrice = Math.floor(monthPrice * 0.8).toFixed(2)
       </p>
     </div>
     <div
-      class='md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-3 md:self-start md:justify-self-end md:tracking-widest'
+      class='md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-3 md:self-start md:justify-self-end md:tracking-widest lg:col-span-1 lg:row-span-1 lg:self-center lg:justify-self-center'
     >
       <p class='block font-semibold text-4xl text-center group-[.year]:hidden'>
         $ {monthPrice}
@@ -36,54 +36,14 @@ let yearPrice = Math.floor(monthPrice * 0.8).toFixed(2)
       <p class='opacity-60 text-center md:text-right md:mt-2'>per month</p>
     </div>
     <div
-      class='w-[240px] md:w-[270px] md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3'
+      class='w-[240px] md:w-[270px] md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3 lg:col-span-1 lg:row-span-1'
     >
       <button
         type='button'
         id={`${item.id}btn`}
-        class='uppercase w-full h-10 font-bold bg-black text-white group-[.darkCard]:bg-white group-[.darkCard]:text-black'
+        class='uppercase tracking-widest w-full h-10 font-bold bg-black text-white group-[.darkCard]:bg-white group-[.darkCard]:text-black hover:bg-gray hover:text-black group-[.darkCard]:hover:bg-gray'
         >Pick plan</button
       >
     </div>
   </div>
 </article>
-
-<!-- 
-
-
-  <article
-  class={`w-full min-h-[410px] group ${dark && 'darkCard cardGradient'}`}
-  id={item.id}
->
-  <div
-    class='w-full min-h-[410px] px-6 grid place-items-center gap-10 place-content-center bg-gray bg-opacity-30 group-[.darkCard]:bg-black group-[.darkCard]:bg-opacity-100 group-[.darkCard]:text-white'
-  >
-    <div class='w-full space-y-4 text-center'>
-      <p class='font-bold text-2xl tracking-wider'>{item.title}</p>
-      <p class='opacity-60'>
-        {item.description}
-      </p>
-    </div>
-    <div>
-      <p class='block font-semibold text-4xl text-center group-[.year]:hidden'>
-        $ {monthPrice}
-      </p>
-      <p class='hidden font-semibold text-4xl text-center group-[.year]:block'>
-        $ {yearPrice}
-      </p>
-      <p class='opacity-60 text-center'>per month</p>
-    </div>
-    <div class='w-[240px]'>
-      <button
-        type='button'
-        id={`${item.id}btn`}
-        class='uppercase w-full h-10 font-bold bg-black text-white group-[.darkCard]:bg-white group-[.darkCard]:text-black'
-        >Pick plan</button
-      >
-    </div>
-  </div>
-</article>
-
-
-
- -->

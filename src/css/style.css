@@ -37,6 +37,12 @@
   ===================
 */
 
+.bottomGradient:hover {
+  border-style: solid;
+  border-bottom-width: 6px;
+  border-image: linear-gradient(to right, #ffc593, #bc7198, #5a77ff) 1 0%;
+}
+
 @media screen and (min-width: 1024px) {
   .cardGrid {
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -61,6 +67,14 @@
   .cardGradient {
     border-top-width: 0;
     border-left-width: 6px;
-    border-image: linear-gradient(to right, #ffc593, #bc7198, #5a77ff) 0 100%;
+    border-image: linear-gradient(to top, #ffc593, #bc7198, #5a77ff) 0 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cardGradient {
+    border-top-width: 6px;
+    border-left-width: 0;
+    border-image: linear-gradient(to right, #ffc593, #bc7198, #5a77ff) 1 0%;
   }
 }

@@ -92,7 +92,8 @@ const plans = [
 ---
 
 <script>
-  const label = document.getElementById('check')
+  const label = document.getElementById('label')
+  const span = document.getElementById('check')
   const option1 = document.getElementById('option1')
   const option2 = document.getElementById('option2')
 
@@ -104,9 +105,12 @@ const plans = [
   const planProbtn = document.getElementById('planProbtn')
   const planBusinessbtn = document.getElementById('planBusinessbtn')
 
-  label.addEventListener('click', labelClick)
+  span.addEventListener('click', spanClick)
 
-  function labelClick() {
+  function spanClick() {
+    label.classList.toggle('bg-gray')
+    label.classList.toggle('bg-black')
+    // Texts changes
     option1.classList.toggle('opacity-50')
     option2.classList.toggle('opacity-50')
     // change prices
@@ -150,21 +154,22 @@ const plans = [
     description={headerContent.description}
     imgRoute={headerContent.imgRoute}
   />
-  <main class='px-7 my-16 md:px-10 grid gap-16'>
+  <main class='px-7 my-16 md:px-10 grid gap-16 lg:place-content-center'>
     <section class='w-full h-8 flex justify-center items-center gap-8'>
       <p id='option1' class='font-bold'>Monthly</p>
       <label
         for='check'
-        class='bg-gray cursor-pointer relative w-20 h-10 rounded-full'
+        id='label'
+        class='bg-gray cursor-pointer relative w-20 h-10 rounded-full transition-all duration-500'
       >
         <input type='checkbox' id='check' class='sr-only peer rounded-full' />
         <span
-          class='w-2/5 h-4/5 bg-black absolute rounded-full left-1 top-1 peer-checked:left-11 transition-all duration-500'
+          class='w-2/5 h-4/5 bg-black absolute rounded-full left-1 top-1 peer-checked:bg-white peer-checked:left-11 transition-all duration-500'
         ></span>
       </label>
       <p id='option2' class='font-bold opacity-50'>Yearly</p>
     </section>
-    <section class='w-full grid gap-6'>
+    <section class='w-full grid gap-6 lg:grid-cols-3 lg:max-w-[1100px]'>
       {
         plans.map((item) => {
           if (item.id === 'planPro') return <PriceCard item={item} dark />
@@ -172,7 +177,7 @@ const plans = [
         })
       }
     </section>
-    <section class='hidden uppercase w-full md:block'>
+    <section class='hidden uppercase w-full md:block lg:max-w-[750px] mx-auto'>
       <PerksTablet perks={perks} />
     </section>
     <section class='uppercase w-full md:hidden'>
